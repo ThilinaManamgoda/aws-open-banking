@@ -1206,7 +1206,7 @@ Mappings:
     eu-west-1:
        Ubuntu1804: ami-01ede9cf5682c13eb
     us-east-1:
-       Ubuntu1804: ami-0e76b0c0dcd18c5ea
+       Ubuntu1804: ami-07788ed3a363cbde9
     us-east-2:
        Ubuntu1804: ami-0032cc13f9a978562
     us-west-1:
