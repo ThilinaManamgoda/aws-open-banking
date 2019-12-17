@@ -414,7 +414,7 @@ Resources:
     Type: 'AWS::EC2::Instance'
     CreationPolicy:
       ResourceSignal:
-        Count: 1
+        Count: 2
         Timeout: PT30M
     Properties:
       DisableApiTermination: 'false'
@@ -494,6 +494,7 @@ Resources:
                 - !Ref ProductVersion
             - service puppetmaster restart
             - !Sub "/home/ubuntu/wso2-init.sh '${WUMUsername}' '${WUMPassword}' wso2-obam-${ProductVersion} ${InternalPrepareForTest}"
+            - !Sub "/usr/local/bin/cfn-signal -e $? --stack ${AWS::StackName} --resource WSO2OBPuppetMaster --region ${AWS::Region}"
             - !Sub "/home/ubuntu/wso2-init.sh '${WUMUsername}' '${WUMPassword}' wso2-obkm-${ProductVersion} ${InternalPrepareForTest}"
             - !Sub "/usr/local/bin/cfn-signal -e $? --stack ${AWS::StackName} --resource WSO2OBPuppetMaster --region ${AWS::Region}"
             - !Join
